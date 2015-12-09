@@ -6,7 +6,7 @@ Rainbow forum page: http://www.project-rainbow.org/site/index.php?topic=2087
 # Permissons
 
 Command    | Permissions          | Other users can use it on other users | Usage                         | Alias
---------   |-----------------     |---------------------------------------|-------------------------------|
+--------   |-----------------     |---------------------------------------|-------------------------------|--------
 /fly       | e_fly.use            | give_fly.others                       | /fly \<player\>               |
 /survival  | e_sm.use             | e_sm.other                            | /survival \<player\>          |
 /creative  | e_cm.use             | e_cm.other                            | /creative \<player\>          |
