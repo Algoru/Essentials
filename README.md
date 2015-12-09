@@ -1,6 +1,8 @@
 # Essentials
 Essential plugin for you Rainbow server.
 
+Rainbow forum page: http://www.project-rainbow.org/site/index.php?action=downloads;sa=view;down=329    
+
 # Permissons
 
 Command    | Permissions          | Other users can use it on other users | Use
