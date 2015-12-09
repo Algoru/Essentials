@@ -22,6 +22,7 @@ public class MyPlugin extends PluginBase {
         server.registerCommand(new More());
         server.registerCommand(new Skull());
         server.registerCommand(new Repair());
+        server.registerCommand(new Realname());
 
 
         File r_f = new File("rules.txt");
