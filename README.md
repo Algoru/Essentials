@@ -12,3 +12,4 @@ Command    | Permissions          | Other users can use it on other users
 /spectator | e_sm.use             | e_sm.other
 /rules     | Everybody can use it | Everybody can use it
 /clearchat | Everybody can use it | e_ct.other
+/heal      | e_heal.use           | e_heal.other
