@@ -16,4 +16,4 @@ Command    | Permissions          | Other users can use it on other users | Use
 /feed      | e_feed.use           | e_feed.other                          | /feed <player>
 /more      | e_more.use           | You can't use this command with users | /more
 
-P.D: The argument <player> is optional.   
+P.D: The argument \<player\> is optional.   
