@@ -22,7 +22,7 @@ public class Feed implements MC_Command {
 
     @Override
     public String getHelpLine(MC_Player arg0) {
-        return ChatColor.BLUE + "[USE] " + ChatColor.GOLD + "/feed <player>";
+        return ChatColor.GOLD + "/feed <player>" + ChatColor.WHITE + " -- Set your fed to 100%";
     }
 
     @Override

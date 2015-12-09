@@ -23,7 +23,7 @@ public class Fly implements MC_Command {
 
     @Override
     public String getHelpLine(MC_Player arg0) {
-        return ChatColor.BLUE + "[USE] " + ChatColor.GOLD + "/fly <player>";
+        return ChatColor.GOLD + "/fly <player>" + ChatColor.WHITE + " -- Guess what ? You can fly !";
     }
 
     @Override

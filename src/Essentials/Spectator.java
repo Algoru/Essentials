@@ -21,7 +21,7 @@ public class Spectator implements MC_Command {
 
     @Override
     public String getHelpLine(MC_Player arg0) {
-        return ChatColor.BLUE + "[USE] " + ChatColor.GOLD + "/spectator <player>";
+        return ChatColor.GOLD + "/spectator <player>" + ChatColor.WHITE + " -- Changes gamemode to spectator";
     }
 
     @Override

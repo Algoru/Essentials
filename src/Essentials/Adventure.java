@@ -21,7 +21,7 @@ public class Adventure implements MC_Command {
 
     @Override
     public String getHelpLine(MC_Player arg0) {
-        return ChatColor.BLUE + "[USE] " + ChatColor.GOLD + "/adventure <player>";
+        return ChatColor.GOLD + "/adventure <player>" + ChatColor.WHITE + " -- Changes gamemode to adventure";
     }
 
     @Override
