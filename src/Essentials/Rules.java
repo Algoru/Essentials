@@ -23,7 +23,7 @@ public class Rules implements MC_Command {
 
     @Override
     public String getHelpLine(MC_Player arg0) {
-        return ChatColor.GOLD + "/rules" + ChatColor.WHITE + " -- Show server rules";
+        return ChatColor.GOLD + "/rules" + ChatColor.WHITE + " -- Displays the rules";
     }
 
     @Override

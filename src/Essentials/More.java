@@ -23,7 +23,7 @@ public class More implements MC_Command {
 
     @Override
     public String getHelpLine(MC_Player arg0) {
-        return ChatColor.GOLD + "/more" + ChatColor.WHITE + " -- Gives you a stack of item that you have in your hand";
+        return ChatColor.GOLD + "/more" + ChatColor.WHITE + " -- Fills the item stack in hand to maximum size";
     }
 
     @Override

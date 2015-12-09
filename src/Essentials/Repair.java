@@ -22,7 +22,7 @@ public class Repair implements MC_Command {
 
     @Override
     public String getHelpLine(MC_Player arg0) {
-        return ChatColor.GOLD + "/repair [all|hand] <player>" + ChatColor.WHITE + " -- Repair the item in your hand or all your inventory";
+        return ChatColor.GOLD + "/repair [all|hand] <player>" + ChatColor.WHITE + " -- Repairs the durability of all or one item";
     }
 
     @Override

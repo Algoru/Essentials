@@ -21,7 +21,7 @@ public class Heal implements MC_Command {
 
     @Override
     public String getHelpLine(MC_Player arg0) {
-        return ChatColor.GOLD + "/heal <player>" + ChatColor.WHITE + " -- Set your health to 100%";
+        return ChatColor.GOLD + "/heal <player>" + ChatColor.WHITE + " -- Heal a player";
     }
 
     @Override
