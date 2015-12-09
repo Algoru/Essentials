@@ -56,7 +56,7 @@ public class Nick implements MC_Command {
                             if(other_player != null) {
                                 if(arg1[1].equals("off")) {
                                     other_player.setCustomName(other_player.getName());
-                                    arg0.sendMessage(ChatColor.AQUA + " ~ \n" + "Your nickname has been restored");
+                                    arg0.sendMessage(ChatColor.AQUA + " ~ Your nickname has been restored");
                                 } else {
                                     other_player.setCustomName(arg1[1]);
                                     other_player.sendMessage(ChatColor.AQUA + " ~ Your nickname has been changed to " + ChatColor.DARK_RED + other_player.getCustomName());
