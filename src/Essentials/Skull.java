@@ -54,7 +54,7 @@ public class Skull implements MC_Command {
             if (arg0.isOp()) {
                 perm = true;
             } else {
-                if (arg0.hasPermission("e_spawnskull.use")) {
+                if (arg0.hasPermission("essentials.spawnskull.use")) {
                     perm = true;
                 }
             }

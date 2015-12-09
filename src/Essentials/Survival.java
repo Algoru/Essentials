@@ -44,7 +44,7 @@ public class Survival implements MC_Command {
         else {
             MC_Player other_player = MyPlugin.server.getOnlinePlayerByName(arg1[0]);
 
-            if(arg0.hasPermission("e_sm.other")) {
+            if(arg0.hasPermission("essentials.sm.other")) {
                 if(other_player != null) {
                     other_player.setGameMode(MC_GameMode.SURVIVAL);
                     other_player.sendMessage(ChatColor.GOLD + " ~ Game mode changed to " + ChatColor.RED + "survival");
@@ -64,7 +64,7 @@ public class Survival implements MC_Command {
             if (arg0.isOp()) {
                 perm = true;
             } else {
-                if (arg0.hasPermission("e_sm.use")) {
+                if (arg0.hasPermission("essentials.sm.use")) {
                     perm = true;
                 }
             }

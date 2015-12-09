@@ -38,7 +38,7 @@ public class Repair implements MC_Command {
         if(arg1.length > 2)
             arg0.sendMessage(this.getHelpLine(arg0));
         else {
-            if(arg0.hasPermission("e_repair.other")) {
+            if(arg0.hasPermission("essentials.repair.other")) {
                 switch (arg1.length) {
                     case 0:
                         arg0.getItemInHand().setDamage(0);
@@ -81,7 +81,7 @@ public class Repair implements MC_Command {
             if (arg0.isOp()) {
                 perm = true;
             } else {
-                if (arg0.hasPermission("e_repair.use")) {
+                if (arg0.hasPermission("essentials.repair.use")) {
                     perm = true;
                 }
             }

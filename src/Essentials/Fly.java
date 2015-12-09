@@ -53,7 +53,7 @@ public class Fly implements MC_Command {
         else {
             MC_Player other_player = MyPlugin.server.getOnlinePlayerByName(arg1[0]);
 
-            if(arg0.hasPermission("give_fly.others")) {
+            if(arg0.hasPermission("essentials.give_fly.others")) {
                 if(other_player != null) {
                     if(other_player.isAllowedFlight()) {
                         arg0.setAllowFlight(false);
@@ -80,7 +80,7 @@ public class Fly implements MC_Command {
             if (arg0.isOp()) {
                 perm = true;
             } else {
-                if (arg0.hasPermission("e_fly.use")) {
+                if (arg0.hasPermission("essentials.fly.use")) {
                     perm = true;
                 }
             }

@@ -45,7 +45,7 @@ public class Feed implements MC_Command {
         else {
             MC_Player other_player = MyPlugin.server.getOnlinePlayerByName(arg1[0]);
 
-            if(arg0.hasPermission("e_feed.other")) {
+            if(arg0.hasPermission("essentials.feed.other")) {
                 if(other_player != null) {
                     other_player.sendMessage(ChatColor.GOLD + " ~ You have been fed");
                     arg0.setFoodLevel(100);
@@ -65,7 +65,7 @@ public class Feed implements MC_Command {
             if (arg0.isOp()) {
                 perm = true;
             } else {
-                if (arg0.hasPermission("e_feed.use")) {
+                if (arg0.hasPermission("essentials.feed.use")) {
                     perm = true;
                 }
             }

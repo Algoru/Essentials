@@ -49,7 +49,7 @@ public class More implements MC_Command {
             if (arg0.isOp()) {
                 perm = true;
             } else {
-                if (arg0.hasPermission("e_more.use")) {
+                if (arg0.hasPermission("essentials.more.use")) {
                     perm = true;
                 }
             }

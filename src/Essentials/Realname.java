@@ -40,7 +40,7 @@ public class Realname implements MC_Command {
         else {
             MC_Player other_player = MyPlugin.server.getOnlinePlayerByName(arg1[0]);
 
-            if(arg0.hasPermission("e_realname.other")) {
+            if(arg0.hasPermission("essentials.realname.other")) {
                 if(other_player != null) {
                     if(other_player.hasCustomName())
                         arg0.sendMessage(ChatColor.DARK_RED + other_player.getCustomName() + ChatColor.GOLD + " real name is " + ChatColor.AQUA + other_player.getName());
@@ -62,7 +62,7 @@ public class Realname implements MC_Command {
             if (arg0.isOp()) {
                 perm = true;
             } else {
-                if (arg0.hasPermission("e_realname.use")) {
+                if (arg0.hasPermission("essentials.realname.use")) {
                     perm = true;
                 }
             }

@@ -5,20 +5,21 @@ Rainbow forum page: http://www.project-rainbow.org/site/index.php?topic=2087
 
 # Permissons
 
-Command    | Permissions          | Other users can use it on other users | Usage                            | Alias
---------   |-----------------     |---------------------------------------|----------------------------------|--------------
-/fly       | e_fly.use            | give_fly.others                       | /fly \<player\>                  |
-/survival  | e_sm.use             | e_sm.other                            | /survival \<player\>             |
-/creative  | e_cm.use             | e_cm.other                            | /creative \<player\>             |
-/adventure | e_am.use             | e_am.other                            | /adventure \<player\>            |
-/spectator | e_sm.use             | e_sm.other                            | /spectator \<player\>            |
-/rules     | Everybody can use it | Everybody can use it                  | /rules                           |
-/clearchat | Everybody can use it | e_ct.other                            | /clearchat \<player\>            |
-/heal      | e_heal.use           | e_heal.other                          | /heal \<player\>                 |
-/feed      | e_feed.use           | e_feed.other                          | /feed \<player\>                 | eat
-/more      | e_more.use           | You can't use this command with users | /more                            |
-/skull     | e_spawnskull.use     | You can't use this command with users | /skull \<owner\>                 |
-/repair    | e_repair.use         | e_repair.other                        | /repair \[all\|hand\] \<player\> | fix
-/realname  | e_realname.use       | e_realname.other                      | /realname \<player\>             |
+Command    | Permissions              | Other users can use it on other users | Usage                            | Alias
+--------   |-----------------         |---------------------------------------|----------------------------------|--------------
+/fly       | essentials.fly.use       | essentials.give_fly.others            | /fly \<player\>                  |
+/survival  | essentials.sm.use        | essentials.sm.other                   | /survival \<player\>             |
+/creative  | essentials.cm.use        | essentials.cm.other                   | /creative \<player\>             |
+/adventure | essentials.am.use        | essentials.am.other                   | /adventure \<player\>            |
+/spectator | essentials.sm.use        | essentials.sm.other                   | /spectator \<player\>            |
+/rules     | Everybody can use it     | Everybody can use it                  | /rules                           |
+/clearchat | Everybody can use it     | essentials.ct.other                   | /clearchat \<player\>            |
+/heal      | essentials.heal.use      | essentials.heal.other                 | /heal \<player\>                 |
+/feed      | essentials.feed.use      | essentials.feed.other                 | /feed \<player\>                 | eat
+/more      | essentials.more.use      | You can't use this command with users | /more                            |
+/skull     | essentials.spawnskull.use| You can't use this command with users | /skull \<owner\>                 |
+/repair    | essentials.repair.use    | essentials.repair.other               | /repair \[all\|hand\] \<player\> | fix
+/realname  | essentials.realname.use  | essentials.realname.other             | /realname \<player\>             |
+/nick      | essentials.nickname.use  | essentials.nickname.other             | /nick \<player\> \<nick\|off\>   | nickname
 
 P.D: The argument \<player\> is optional. Except in /realname

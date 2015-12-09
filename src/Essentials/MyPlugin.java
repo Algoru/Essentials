@@ -1,7 +1,6 @@
 package Essentials;
 
 import PluginReference.*;
-import jdk.nashorn.internal.parser.JSONParser;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -23,6 +22,7 @@ public class MyPlugin extends PluginBase {
         server.registerCommand(new Skull());
         server.registerCommand(new Repair());
         server.registerCommand(new Realname());
+        server.registerCommand(new Nick());
 
 
         File r_f = new File("rules.txt");
@@ -30,6 +30,7 @@ public class MyPlugin extends PluginBase {
         if(!r_f.exists()) {
             System.out.println(" [*] rules.txt not found... Creating.");
             PrintWriter nrf = null;
+
             try {
                 nrf = new PrintWriter("rules.txt", "UTF-8");
                 nrf.write("1. Be nice\n");
@@ -41,9 +42,8 @@ public class MyPlugin extends PluginBase {
                 if(nrf != null)
                     nrf.close();
             }
-        } else {
+        } else
             System.out.println(" [*] rules.txt detected.");
-        }
 
         System.out.println("=== Essentials enabled ===");
         this.server = server;

@@ -46,7 +46,7 @@ public class ClearChat implements MC_Command {
         else {
             MC_Player other_player = MyPlugin.server.getOnlinePlayerByName(arg1[0]);
 
-            if(arg0.hasPermission("e_ct.other")) {
+            if(arg0.hasPermission("essentials.ct.other")) {
                 if(other_player != null) {
                     other_player.sendMessage(ChatColor.GOLD + " ~ Chat cleaned");
                     for(int i = 0; i <= 18; i++)

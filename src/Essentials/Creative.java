@@ -44,7 +44,7 @@ public class Creative implements MC_Command {
         else {
             MC_Player other_player = MyPlugin.server.getOnlinePlayerByName(arg1[0]);
 
-            if(arg0.hasPermission("e_cm.other")) {
+            if(arg0.hasPermission("essentials.cm.other")) {
                 if(other_player != null) {
                     other_player.setGameMode(MC_GameMode.CREATIVE);
                     other_player.sendMessage(ChatColor.GOLD + " ~ Game mode changed to " + ChatColor.AQUA + "creative");
@@ -64,7 +64,7 @@ public class Creative implements MC_Command {
             if (arg0.isOp()) {
                 perm = true;
             } else {
-                if (arg0.hasPermission("e_cm.use")) {
+                if (arg0.hasPermission("essentials.cm.use")) {
                     perm = true;
                 }
             }
