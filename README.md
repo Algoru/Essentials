@@ -14,3 +14,4 @@ Command    | Permissions          | Other users can use it on other users
 /clearchat | Everybody can use it | e_ct.other
 /heal      | e_heal.use           | e_heal.other
 /feed      | e_feed.use           | e_feed.other
+/more      | e_more.use           | You can't use this command with users

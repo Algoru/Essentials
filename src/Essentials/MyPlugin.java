@@ -18,6 +18,7 @@ public class MyPlugin extends PluginBase {
         server.registerCommand(new Rules());
         server.registerCommand(new Heal());
         server.registerCommand(new Feed());
+        server.registerCommand(new More());
 
         File r_f = new File("rules.txt");
 
