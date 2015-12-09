@@ -17,5 +17,6 @@ Command    | Permissions          | Other users can use it on other users | Use
 /heal      | e_heal.use           | e_heal.other                          | /heal \<player\>
 /feed      | e_feed.use           | e_feed.other                          | /feed \<player\>
 /more      | e_more.use           | You can't use this command with users | /more
-
+/skull     | e_spawnskull.use     | You can't use this command with users | /skull \<owner\>
+  
 P.D: The argument \<player\> is optional.   

@@ -5,24 +5,24 @@ import PluginReference.*;
 import java.util.Arrays;
 import java.util.List;
 
-public class Feed implements MC_Command {
-    public Feed() {
+public class Skull implements MC_Command {
+    public Skull() {
 
     }
 
     @Override
     public List<String> getAliases() {
-        return Arrays.asList("eat");
+        return null;
     }
 
     @Override
     public String getCommandName() {
-        return "feed";
+        return "skull";
     }
 
     @Override
     public String getHelpLine(MC_Player arg0) {
-        return ChatColor.BLUE + "[USE] " + ChatColor.GOLD + "/feed <player>";
+        return ChatColor.BLUE + "[USE] " + ChatColor.GOLD + "/skull <owner>";
     }
 
     @Override
@@ -35,23 +35,12 @@ public class Feed implements MC_Command {
 
     @Override
     public void handleCommand(MC_Player arg0, String[] arg1) {
-        if(arg1.length == 0) {
-            arg0.sendMessage(ChatColor.GOLD + " ~ You have been fed");
-            arg0.setFoodLevel(100);
-        }
-
-        if(arg1.length > 1)
+        if(arg1.length == 0 || arg1.length > 1)
             arg0.sendMessage(this.getHelpLine(arg0));
         else {
-            MC_Player other_player = MyPlugin.server.getOnlinePlayerByName(arg1[0]);
-
-            if(arg0.hasPermission("e_feed.other")) {
-                if(other_player != null) {
-                    other_player.sendMessage(ChatColor.GOLD + " ~ You have been fed");
-                    arg0.setFoodLevel(100);
-                } else
-                    arg0.sendMessage(ChatColor.RED + " ~ Player <" + arg1[0] + "> not found");
-            }
+            MC_ItemStack new_skull = MyPlugin.server.createItemStack(MC_ItemType.SKELETON_SKULL, 1, 3);
+            new_skull.setSkullOwner(arg1[0]);
+            arg0.getWorld().dropItem(new_skull, arg0.getLocation(), arg0.getName());
         }
     }
 
@@ -65,7 +54,7 @@ public class Feed implements MC_Command {
             if (arg0.isOp()) {
                 perm = true;
             } else {
-                if (arg0.hasPermission("e_feed.use")) {
+                if (arg0.hasPermission("e_spawnskull.use")) {
                     perm = true;
                 }
             }
