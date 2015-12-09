@@ -1,7 +1,7 @@
 # Essentials
 Essential plugin for you Rainbow server.
 
-Rainbow forum page: http://www.project-rainbow.org/site/index.php?action=downloads;sa=view;down=329    
+Rainbow forum page: http://www.project-rainbow.org/site/index.php?topic=2087   
 
 # Permissons
 
