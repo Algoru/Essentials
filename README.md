@@ -22,6 +22,6 @@ Command    | Permissions              | Other users can use it on other users | 
 /realname  | essentials.realname.use  | essentials.realname.other             | /realname \<player\>             |
 /nick      | essentials.nickname.use  | essentials.nickname.other             | /nick \<player\> \<nick\|off\>   | nickname
 /msg       | essentials.msg.use       | Everybody can use it                  | /msg \<player\> \<message\>      | t, m, tell, whisper
-/kickall   | essentials.kickall.use   | essentials.unkickable                 | /kickall <reason>                |
+/kickall   | essentials.kickall.use   | essentials.unkickable                 | /kickall \<reason\>                |
 
 P.D: The argument \<player\> is optional. Except in /realname and /msg
