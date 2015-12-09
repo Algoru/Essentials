@@ -2,10 +2,12 @@ package Essentials;
 
 import PluginReference.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class Heal implements MC_Command {
-    public Heal() {
+public class Feed implements MC_Command {
+    public Feed() {
 
     }
 
@@ -16,12 +18,12 @@ public class Heal implements MC_Command {
 
     @Override
     public String getCommandName() {
-        return "heal";
+        return "feed";
     }
 
     @Override
     public String getHelpLine(MC_Player arg0) {
-        return ChatColor.BLUE + "[USE] " + ChatColor.GOLD + "/heal <player>";
+        return ChatColor.BLUE + "[USE] " + ChatColor.GOLD + "/feed <player>";
     }
 
     @Override
@@ -35,8 +37,8 @@ public class Heal implements MC_Command {
     @Override
     public void handleCommand(MC_Player arg0, String[] arg1) {
         if(arg1.length == 0) {
-            arg0.sendMessage(ChatColor.GOLD + " ~ You have been healed");
-            arg0.setHealth(100);
+            arg0.sendMessage(ChatColor.GOLD + " ~ You have been fed");
+            arg0.setFoodLevel(100);
         }
 
         if(arg1.length > 1)
@@ -44,10 +46,10 @@ public class Heal implements MC_Command {
         else {
             MC_Player other_player = MyPlugin.server.getOnlinePlayerByName(arg1[0]);
 
-            if(arg0.hasPermission("e_heal.other")) {
+            if(arg0.hasPermission("e_feed.other")) {
                 if(other_player != null) {
-                    other_player.sendMessage(ChatColor.GOLD + " ~ You have been healed");
-                    other_player.setHealth(100);
+                    other_player.sendMessage(ChatColor.GOLD + " ~ You have been fed");
+                    arg0.setFoodLevel(100);
                 } else
                     arg0.sendMessage(ChatColor.RED + " ~ Player <" + arg1[0] + "> not found");
             }
@@ -64,7 +66,7 @@ public class Heal implements MC_Command {
             if (arg0.isOp()) {
                 perm = true;
             } else {
-                if (arg0.hasPermission("e_heal.use")) {
+                if (arg0.hasPermission("e_feed.use")) {
                     perm = true;
                 }
             }
