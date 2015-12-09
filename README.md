@@ -21,4 +21,4 @@ Command    | Permissions          | Other users can use it on other users | Usag
 /repair    | e_repair.use         | e_repair.other                        | /repair \[all\|hand\] \<player\> | fix
 /realname  | e_realname.use       | e_realname.other                      | /realname \<player\>             |
 
-P.D: The argument \<player\> is optional.   
+P.D: The argument \<player\> is optional. Except in /realname
