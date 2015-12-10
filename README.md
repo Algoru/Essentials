@@ -26,3 +26,4 @@ Command    | Permissions                  | Other users can use it on other user
 /nick      | essentials.nickname.use      | essentials.nickname.other             | /nick \[player\] \<nick\|off\>   | nickname
 /msg       | essentials.msg.use           | Everybody can use it                  | /msg \<player\> \<message\>      | t, m, tell, whisper
 /kickall   | essentials.kickall.use       | essentials.unkickable                 | /kickall \<reason\>              |
+/tphere    | essentials.tphere.use        | You can't use this command with users | /tphere \<player\>               |
