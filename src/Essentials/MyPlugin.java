@@ -26,6 +26,7 @@ public class MyPlugin extends PluginBase {
         server.registerCommand(new Msg());
         server.registerCommand(new Kickall());
         server.registerCommand(new Tphere());
+        server.registerCommand(new Tppos());
 
 
         File r_f = new File("rules.txt");
