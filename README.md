@@ -5,8 +5,8 @@ Rainbow forum page: http://www.project-rainbow.org/site/index.php?topic=2087
 
 # Permissons
 
-**\<param\>:* Required Parameter
-**\[param\]:* Optional Parameter
+*\<param\>:* Required Parameter  
+*\[param\]:* Optional Parameter
 
 Command    | Permissions                  | Other users can use it on other users | Usage                            | Alias
 -----------|------------------------------|---------------------------------------|----------------------------------|--------------
