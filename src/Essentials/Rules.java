@@ -71,10 +71,17 @@ public class Rules implements MC_Command {
     public boolean hasPermissionToUse(MC_Player arg0) {
         boolean perm = false;
 
-        if (arg0 == null)
-            perm = false;
-        else
+        if (arg0 == null) {
             perm = true;
+        } else {
+            if (arg0.isOp()) {
+                perm = true;
+            } else {
+                if (arg0.hasPermission("essentials.rules.use")) {
+                    perm = true;
+                }
+            }
+        }
 
         return perm;
     }

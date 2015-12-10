@@ -36,7 +36,10 @@ public class ClearChat implements MC_Command {
     @Override
     public void handleCommand(MC_Player arg0, String[] arg1) {
         if(arg1.length > 1)
-            arg0.sendMessage(this.getHelpLine(arg0));
+            if(arg0 == null)
+                System.out.println(this.getHelpLine(arg0));
+            else
+                arg0.sendMessage(this.getHelpLine(arg0));
         else if(arg1.length == 0) {
             if(arg0 == null)
                 System.out.println(" ~ You must be a player to do that !");
@@ -72,7 +75,13 @@ public class ClearChat implements MC_Command {
         if (arg0 == null) {
             perm = true;
         } else {
-            perm = true;
+            if (arg0.isOp()) {
+                perm = true;
+            } else {
+                if (arg0.hasPermission("essentials.clearchat.use")) {
+                    perm = true;
+                }
+            }
         }
 
         return perm;
