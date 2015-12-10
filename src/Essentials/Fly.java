@@ -37,20 +37,25 @@ public class Fly implements MC_Command {
     @Override
     public void handleCommand(MC_Player arg0, String[] arg1) {
         if(arg1.length == 0) {
-            if(arg0.isAllowedFlight()) {
-                arg0.setAllowFlight(false);
-                arg0.setFlying(false);
-                arg0.sendMessage(ChatColor.GOLD + " ~ Fly disabled");
-            } else {
-                arg0.setAllowFlight(true);
-                arg0.setFlying(true);
-                arg0.sendMessage(ChatColor.AQUA + " ~ Fly enabled");
+            if(arg0 == null)
+                System.out.println(" ~ You must be a player todo that !");
+            else {
+                if(arg0.isAllowedFlight()) {
+                    arg0.setAllowFlight(false);
+                    arg0.setFlying(false);
+                    arg0.sendMessage(ChatColor.GOLD + " ~ Fly disabled");
+                } else {
+                    arg0.setAllowFlight(true);
+                    arg0.setFlying(true);
+                    arg0.sendMessage(ChatColor.AQUA + " ~ Fly enabled");
+                }
             }
-        }
-
-        if(arg1.length > 1)
-            arg0.sendMessage(this.getHelpLine(arg0));
-        else {
+        } else if(arg1.length > 1) {
+            if(arg0 == null)
+                System.out.println(this.getHelpLine(arg0));
+            else
+                arg0.sendMessage(this.getHelpLine(arg0));
+        } else {
             MC_Player other_player = MyPlugin.server.getOnlinePlayerByName(arg1[0]);
 
             if(arg0.hasPermission("essentials.give_fly.others")) {
@@ -64,8 +69,12 @@ public class Fly implements MC_Command {
                         arg0.setFlying(true);
                         arg0.sendMessage(ChatColor.AQUA + " ~ Fly enabled");
                     }
-                } else
-                    arg0.sendMessage(ChatColor.RED + " ~ Player <" + arg1[0] + "> not found");
+                } else {
+                    if(arg0 == null)
+                        System.out.println(" ~ Player <" + arg1[0] + "> not found");
+                    else
+                        arg0.sendMessage(ChatColor.RED + " ~ Player <" + arg1[0] + "> not found");
+                }
             }
         }
     }
@@ -75,7 +84,7 @@ public class Fly implements MC_Command {
         boolean perm = false;
 
         if (arg0 == null) {
-            perm = false;
+            perm = true;
         } else {
             if (arg0.isOp()) {
                 perm = true;

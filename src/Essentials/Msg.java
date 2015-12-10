@@ -35,15 +35,27 @@ public class Msg implements MC_Command {
 
     @Override
     public void handleCommand(MC_Player arg0, String[] arg1) {
-        if(arg1.length == 0 || arg1.length > 2)
-            arg0.sendMessage(this.getHelpLine(arg0));
-        else {
-            MC_Player other_player = MyPlugin.server.getOnlinePlayerByName(arg1[0]);
+        if(arg1.length < 2 || arg1.length > 2) {
+            if(arg0 == null)
+                System.out.println(this.getHelpLine(arg0));
+            else
+                arg0.sendMessage(this.getHelpLine(arg0));
+        } else {
+            if(arg1.length == 2) {
+                MC_Player other_player = MyPlugin.server.getOnlinePlayerByName(arg1[0]);
 
-            if(other_player != null) {
-                other_player.sendMessage(ChatColor.GOLD + "[" + ChatColor.DARK_RED + arg0.getCustomName() + ChatColor.GOLD + " -> " + other_player.getCustomName() + ChatColor.GOLD + "] " + ChatColor.WHITE + arg1[1]);
-            } else
-                arg0.sendMessage(ChatColor.RED + " ~ Player <" + arg1[0] + "> not found");
+                if(other_player != null) {
+                    if(arg0 == null)
+                        other_player.sendMessage(ChatColor.GOLD + "[" + ChatColor.DARK_RED + "Server" + ChatColor.GOLD + " -> " + other_player.getCustomName() + ChatColor.GOLD + "] " + ChatColor.WHITE + arg1[1]);
+                    else
+                        other_player.sendMessage(ChatColor.GOLD + "[" + ChatColor.DARK_RED + arg0.getCustomName() + ChatColor.GOLD + " -> " + other_player.getCustomName() + ChatColor.GOLD + "] " + ChatColor.WHITE + arg1[1]);
+                } else {
+                    if(arg0 == null)
+                        System.out.println(" ~ Player <" + arg1[0] + "> not found");
+                    else
+                        arg0.sendMessage(ChatColor.RED + " ~ Player <" + arg1[0] + "> not found");
+                }
+            }
         }
     }
 

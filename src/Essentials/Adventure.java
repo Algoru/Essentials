@@ -35,21 +35,31 @@ public class Adventure implements MC_Command {
     @Override
     public void handleCommand(MC_Player arg0, String[] arg1) {
         if(arg1.length == 0) {
-            arg0.setGameMode(MC_GameMode.SPECTATOR);
-            arg0.sendMessage(ChatColor.GOLD + " ~ Game mode changed to " + ChatColor.GREEN + "adventure");
-        }
+            if(arg0 == null)
+                System.out.println(" ~ You must be a player to do that !");
+            else {
+                arg0.setGameMode(MC_GameMode.ADVENTURE);
+                arg0.sendMessage(ChatColor.GOLD + " ~ Game mode changed to " + ChatColor.GREEN + "adventure");
+            }
+        } else if(arg1.length > 1) {
+            if (arg0 == null)
+                System.out.println(this.getHelpLine(arg0));
+            else
+                arg0.sendMessage(this.getHelpLine(arg0));
+        } else {
+            if(arg1.length == 1) {
+                MC_Player other_player = MyPlugin.server.getOnlinePlayerByName(arg1[0]);
 
-        if(arg1.length > 1)
-            arg0.sendMessage(this.getHelpLine(arg0));
-        else {
-            MC_Player other_player = MyPlugin.server.getOnlinePlayerByName(arg1[0]);
-
-            if(arg0.hasPermission("essentials.am.other")) {
-                if(other_player != null) {
-                    other_player.setGameMode(MC_GameMode.SPECTATOR);
-                    other_player.sendMessage(ChatColor.GOLD + " ~ Game mode changed to " + ChatColor.GREEN + "adventure");
-                } else
-                    arg0.sendMessage(ChatColor.RED + " ~ Player <" + arg1[0] + "> not found");
+                if(arg0.hasPermission("essentials.adventuremode.other")) {
+                    if(other_player != null) {
+                        other_player.setGameMode(MC_GameMode.ADVENTURE);
+                        other_player.sendMessage(ChatColor.GOLD + " ~ Game mode changed to " + ChatColor.GREEN + "adventure");
+                    } else
+                    if(arg0 == null)
+                        System.out.println(" ~ Player <" + arg1[0] + "> not found");
+                    else
+                        arg0.sendMessage(ChatColor.RED + " ~ Player <" + arg1[0] + "> not found");
+                }
             }
         }
     }
@@ -59,12 +69,12 @@ public class Adventure implements MC_Command {
         boolean perm = false;
 
         if (arg0 == null) {
-            perm = false;
+            perm = true;
         } else {
             if (arg0.isOp()) {
                 perm = true;
             } else {
-                if (arg0.hasPermission("essentials.am.use")) {
+                if (arg0.hasPermission("essentials.adventuremode.use")) {
                     perm = true;
                 }
             }
