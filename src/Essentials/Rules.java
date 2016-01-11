@@ -28,9 +28,6 @@ public class Rules implements MC_Command {
 
     @Override
     public List<String> getTabCompletionList(MC_Player arg0, String[] arg1) {
-        if (arg1.length == 1)
-            return MyPlugin.server.getMatchingOnlinePlayerNames(arg1[0]);
-
         return null;
     }
 
@@ -47,9 +44,8 @@ public class Rules implements MC_Command {
 
                 arg0.sendMessage(ChatColor.GOLD + "======================= RULES =======================");
 
-                while((Currentline = r_file.readLine()) != null) {
+                while((Currentline = r_file.readLine()) != null)
                     arg0.sendMessage(ChatColor.WHITE + Currentline);
-                }
 
                 arg0.sendMessage(ChatColor.GOLD + "=====================================================");
 
@@ -72,7 +68,7 @@ public class Rules implements MC_Command {
         boolean perm = false;
 
         if (arg0 == null) {
-            perm = true;
+            perm = false;
         } else {
             if (arg0.isOp()) {
                 perm = true;
