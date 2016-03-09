@@ -30,3 +30,4 @@ Command    | Permissions                  | Other users can use it on other user
 /tppos     | essentials.tppos.use         |                                       | /tppos \[player\] \<x\> \<y\> \<z\> |
 /burn      | essentials.burn.use          |                                       | /burn \<player\> \<seconds\>        |
 /ext       | essentials.ext.use           |                                       | /ext \<player\>                     | extinguish
+/home      | essentials.home.use          |                                       | /home                               |
