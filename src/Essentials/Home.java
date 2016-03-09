@@ -60,7 +60,7 @@ public class Home implements MC_Command {
                 }
 
                 if(userName.equals(" "))
-                    arg0.sendMessage(ChatColor.RED + " ~ You don't have a home setting");
+                    arg0.sendMessage(ChatColor.RED + " ~ You don't have a home");
                 else {
                     MC_Location newLocation = new MC_Location(x, y, z, arg0.getWorld().getDimension());
                     arg0.sendMessage(ChatColor.GOLD + " ~ Teleporting to " + ChatColor.RED + "home");
@@ -70,7 +70,7 @@ public class Home implements MC_Command {
                 reader.close();
             } catch(Exception e) {
                 System.out.println(e);
-                System.out.println(" [*] There was an error during homes.yml reading... Please restart server.");
+                System.out.println(" [*] There was an error during Config/homes.yml reading... Please check Config/homes.yml syntax.");
             }
         }
     }

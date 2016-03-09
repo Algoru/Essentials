@@ -1,0 +1,6 @@
+1.2 [09/03/2016]
+	+ Added /home command
+	+ Added /sethome command
+	+ Added YAML read support
+	
+	P.D: First update since 2015 :)
