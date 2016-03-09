@@ -47,16 +47,20 @@ public class Home implements MC_Command {
                 double x = 0.0, y = 0.0, z = 0.0;
 
                 while(true) {
-                    Map user = (Map)reader.read();
+                    try {
+                        Map user = (Map)reader.read();
 
-                    if(user.get("usr").equals(arg0.getName())) {
-                        userName = (String)user.get("usr");
-                        x = new Double((String)user.get("x"));
-                        y = new Double((String)user.get("y"));
-                        z = new Double((String)user.get("z"));
-                        break;
-                    } else
-                        continue;
+                        if(user.get("usr").equals(arg0.getName())) {
+                            userName = (String)user.get("usr");
+                            x = new Double((String)user.get("x"));
+                            y = new Double((String)user.get("y"));
+                            z = new Double((String)user.get("z"));
+                            break;
+                        } else
+                            continue;
+                    }catch(Exception e) {
+
+                    }
                 }
 
                 if(userName.equals(" "))

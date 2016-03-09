@@ -8,6 +8,7 @@ import com.esotericsoftware.yamlbeans.YamlWriter;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.RandomAccessFile;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -36,12 +37,12 @@ public class Sethome implements MC_Command {
     @Override
     public void handleCommand(MC_Player arg0, String[] arg1) {
         YamlWriter writer;
+
         Coords coords = new Coords();
         coords.usr    = arg0.getName();
         coords.x      = arg0.getLocation().x;
         coords.y      = arg0.getLocation().y;
         coords.z      = arg0.getLocation().z;
-        System.out.println(coords);
 
         if(arg1.length > 0)
             arg0.sendMessage(this.getHelpLine(arg0));
@@ -50,6 +51,11 @@ public class Sethome implements MC_Command {
                 writer = new YamlWriter(new FileWriter("Config/homes.yml"));
                 writer.write(coords);
                 writer.close();
+
+                RandomAccessFile f = new RandomAccessFile(new File("Config/homes.yml"), "rw");
+                f.seek(0);
+                f.write("#".getBytes());
+                f.close();
 
                 arg0.sendMessage(ChatColor.GOLD + " ~ Home set");
             } catch(Exception e) {
