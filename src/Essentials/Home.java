@@ -3,11 +3,14 @@ package Essentials;
 
 import PluginReference.ChatColor;
 import PluginReference.MC_Command;
+import PluginReference.MC_Location;
 import PluginReference.MC_Player;
+import com.esotericsoftware.yamlbeans.YamlException;
 import com.esotericsoftware.yamlbeans.YamlReader;
 
 import java.io.FileReader;
 import java.util.List;
+import java.util.Map;
 
 public class Home implements MC_Command {
     @Override
@@ -22,7 +25,7 @@ public class Home implements MC_Command {
 
     @Override
     public String getHelpLine(MC_Player arg0) {
-        return ChatColor.GOLD + "/home [name]" + ChatColor.WHITE + " -- Teleports you to the location of where you last used the /sethome command";
+        return ChatColor.GOLD + "/home" + ChatColor.WHITE + " -- Teleports you to the location of where you last used the /sethome command";
     }
 
     @Override
@@ -32,13 +35,41 @@ public class Home implements MC_Command {
 
     @Override
     public void handleCommand(MC_Player arg0, String[] arg1) {
-        if(arg1.length > 1)
+        YamlReader reader;
+
+        if(arg1.length > 0)
             arg0.sendMessage(this.getHelpLine(arg0));
         else {
             try {
-                YamlReader reader = new YamlReader(new FileReader("Config/homes.yml"));
+                reader = new YamlReader(new FileReader("Config/homes.yml"));
+
+                String userName = " ";
+                double x = 0.0, y = 0.0, z = 0.0;
+
+                while(true) {
+                    Map user = (Map)reader.read();
+
+                    if(user.get("usr").equals(arg0.getName())) {
+                        userName = (String)user.get("usr");
+                        x = new Double((String)user.get("x"));
+                        y = new Double((String)user.get("y"));
+                        z = new Double((String)user.get("z"));
+                        break;
+                    } else
+                        continue;
+                }
+
+                if(userName.equals(" "))
+                    arg0.sendMessage(ChatColor.RED + " ~ You don't have a home setting");
+                else {
+                    MC_Location newLocation = new MC_Location(x, y, z, arg0.getWorld().getDimension());
+                    arg0.sendMessage(ChatColor.GOLD + " ~ Teleporting to " + ChatColor.RED + "home");
+                    arg0.teleport(newLocation);
+                }
+
                 reader.close();
             } catch(Exception e) {
+                System.out.println(e);
                 System.out.println(" [*] There was an error during homes.yml reading... Please restart server.");
             }
         }

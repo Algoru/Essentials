@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/../plugins_mod</output-path>
     <root id="archive" name="Essentials.jar">
       <element id="module-output" name="Essentials" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/yamlbeans.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
