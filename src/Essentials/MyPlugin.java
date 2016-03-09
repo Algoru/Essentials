@@ -8,6 +8,10 @@ import java.io.PrintWriter;
 public class MyPlugin extends PluginBase {
     public static MC_Server server = null;
 
+    File r_f       = new File("rules.txt"),
+         configDir = new File("Config"),
+         home_f    = new File("Config/homes.yml");
+
     public void onStartup(MC_Server server) {
         server.registerCommand(new Fly());
         server.registerCommand(new Survival());
@@ -29,9 +33,7 @@ public class MyPlugin extends PluginBase {
         server.registerCommand(new Tppos());
         server.registerCommand(new Burn());
         server.registerCommand(new Ext());
-
-
-        File r_f = new File("rules.txt");
+        server.registerCommand(new Home());
 
         if(!r_f.exists()) {
             System.out.println(" [*] rules.txt not found... Creating.");
@@ -51,12 +53,51 @@ public class MyPlugin extends PluginBase {
         } else
             System.out.println(" [*] rules.txt detected.");
 
+        if(!configDir.exists()) {
+            boolean ok = false;
+            System.out.println(" [*] Config dir not found... Creating.");
+
+            try {
+                configDir.mkdir();
+                ok = true;
+            } catch(Exception e) {
+                System.out.println(" [*] Could not create Config dir.");
+            }
+
+            if(ok) {
+                System.out.println(" [*] Config dir created, creating files...");
+                CheckIfHomeExists();
+            }
+        } else {
+            System.out.println(" [*] Config dir detected.");
+            CheckIfHomeExists();
+        }
+
         System.out.println("=== Essentials enabled ===");
         this.server = server;
     }
 
     public void onShutdown() {
         System.out.println("=== Essentials disabled ===");
+    }
+
+    public void CheckIfHomeExists() {
+        if(!home_f.exists()) {
+            System.out.println(" [*] Config/homes.yml not found... Creating.");
+            PrintWriter nrf = null;
+
+            try {
+                nrf = new PrintWriter("Config/homes.yml", "UTF-8");
+                System.out.println(" [*] homes.yml created.");
+            } catch(Exception e) {
+                System.out.println(" [*] Could not create homes.yml.");
+            } finally {
+                if (nrf != null)
+                    nrf.close();
+            }
+        } else {
+            System.out.println(" [*] Config/homes.yml detected.");
+        }
     }
 
     public PluginInfo getPluginInfo() {

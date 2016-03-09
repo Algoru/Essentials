@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Rainbow-1.9-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Rainbow-1.9-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
