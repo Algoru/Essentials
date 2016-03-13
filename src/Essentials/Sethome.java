@@ -2,7 +2,6 @@ package Essentials;
 
 import PluginReference.ChatColor;
 import PluginReference.MC_Command;
-import PluginReference.MC_Location;
 import PluginReference.MC_Player;
 import com.esotericsoftware.yamlbeans.YamlReader;
 import com.esotericsoftware.yamlbeans.YamlWriter;
@@ -11,7 +10,6 @@ import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 
 public class Sethome implements MC_Command {
     @Override
