@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Rainbow-1.9-SNAPSHOT" level="project" />
     <orderEntry type="library" name="yamlbeans" level="project" />
+    <orderEntry type="library" name="Rainbow-1.9-b73" level="project" />
   </component>
 </module>

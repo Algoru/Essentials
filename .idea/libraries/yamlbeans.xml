@@ -2,6 +2,7 @@
   <library name="yamlbeans">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/libs/yamlbeans.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Server/Rainbow-1.9-b73.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
