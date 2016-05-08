@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="PluginReference-1.9.2-b79">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../for_plugin_devs/PluginReference-1.9.2-b79.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
