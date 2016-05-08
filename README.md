@@ -33,3 +33,4 @@ Command    | Permissions                  | Other users can use it on other user
 /home      | essentials.home.use          |                                       | /home                               |
 /sethome   | essentials.sethome.use       |                                       | /sethome                            | createhome
 /broadcast | essentials.broadcast.use     |                                       | /broadcast \<message\>              | bcast
+/tpall     | essentials.tpall.use         |                                       | /tpall \[player\]                   |

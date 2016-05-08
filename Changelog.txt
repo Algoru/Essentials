@@ -7,4 +7,5 @@
 
 1.3 [07/05/2016]
     + Added /broadcast command
+    + Added /tpall command
 
