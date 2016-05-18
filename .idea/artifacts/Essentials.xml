@@ -1,10 +1,9 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="Essentials">
-    <output-path>$PROJECT_DIR$/..</output-path>
+    <output-path>$PROJECT_DIR$/../Server/plugins_mod</output-path>
     <root id="archive" name="Essentials.jar">
-      <element id="module-output" name="Essentials" />
       <element id="library" level="project" name="yamlbeans" />
-      <element id="library" level="project" name="PluginReference-1.9.2-b79" />
+      <element id="module-output" name="Essentials" />
     </root>
   </artifact>
 </component>

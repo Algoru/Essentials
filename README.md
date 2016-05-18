@@ -34,3 +34,5 @@ Command    | Permissions                  | Other users can use it on other user
 /sethome   | essentials.sethome.use       |                                       | /sethome                            | createhome
 /broadcast | essentials.broadcast.use     |                                       | /broadcast \<message\>              | bcast
 /tpall     | essentials.tpall.use         |                                       | /tpall \[player\]                   |
+/ping      | essentials.ping.use          |                                       | /ping \[message\]                   | pong, echo
+/afk       | essentials.afk.use           | essentials.afk.other                  | /afk \[player\]                     | away

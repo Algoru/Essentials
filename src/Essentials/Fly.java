@@ -38,7 +38,7 @@ public class Fly implements MC_Command {
     public void handleCommand(MC_Player arg0, String[] arg1) {
         if(arg1.length == 0) {
             if(arg0 == null)
-                System.out.println(" ~ You must be a player todo that !");
+                System.out.println(" ~ You must be a player to do that !");
             else {
                 if(arg0.isAllowedFlight()) {
                     arg0.setAllowFlight(false);

@@ -37,6 +37,8 @@ public class MyPlugin extends PluginBase {
         server.registerCommand(new Sethome());
         server.registerCommand(new Broadcast());
         server.registerCommand(new Tpall());
+        server.registerCommand(new Ping());
+        server.registerCommand(new Afk());
 
         if(!r_f.exists()) {
             System.out.println(" [*] rules.txt not found... Creating.");

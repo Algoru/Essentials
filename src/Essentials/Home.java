@@ -83,7 +83,7 @@ public class Home implements MC_Command {
         boolean perm = false;
 
         if(arg0 == null)
-            System.out.println("You must be a player to do that !");
+            perm = false;
         else
             perm = true;
 
