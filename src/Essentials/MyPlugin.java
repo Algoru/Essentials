@@ -109,7 +109,7 @@ public class MyPlugin extends PluginBase {
         PluginInfo info = new PluginInfo();
         info.description = "Essentials commands for your server";
         info.name = "Essentials";
-        info.version = "1.1";
+        info.version = "1.4";
         return info;
     }
 }

@@ -9,3 +9,9 @@
     + Added /broadcast command
     + Added /tpall command
 
+1.4 [19/07/2016]
+    * Fixed many bugs
+    + Added /afk command
+    + Added /ping command
+    * Many others features that I don't remember.
+
