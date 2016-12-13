@@ -8,9 +8,15 @@ import java.io.PrintWriter;
 public class MyPlugin extends PluginBase {
     public static MC_Server server = null;
 
-    File r_f       = new File("rules.txt"),
-         configDir = new File("Config"),
-         home_f    = new File("Config/homes.yml");
+    private static final String rulestxt  = "rules.txt";
+    private static final String ConfigDir = "Config";
+    public static final String HomeFile   = "Config/homes.yml";
+    public static final String SpawnFile  = "Config/spawn.yml";
+
+    File r_f       = new File(rulestxt),
+         configDir = new File(ConfigDir),
+         home_f    = new File(HomeFile),
+         spawn_f   = new File(SpawnFile);
 
     public void onStartup(MC_Server server) {
         server.registerCommand(new Fly());
@@ -39,13 +45,17 @@ public class MyPlugin extends PluginBase {
         server.registerCommand(new Tpall());
         server.registerCommand(new Ping());
         server.registerCommand(new Afk());
+        server.registerCommand(new Setspawn());
+        server.registerCommand(new Spawn());
+        server.registerCommand(new Day());
+        server.registerCommand(new Night());
 
         if(!r_f.exists()) {
             System.out.println(" [*] rules.txt not found... Creating.");
             PrintWriter nrf = null;
 
             try {
-                nrf = new PrintWriter("rules.txt", "UTF-8");
+                nrf = new PrintWriter(rulestxt, "UTF-8");
                 nrf.write("1. Be nice\n");
                 nrf.write("2. Edit this file at your server folder. (file name = rules.txt)");
                 System.out.println(" [*] rules.txt created.");
@@ -78,6 +88,22 @@ public class MyPlugin extends PluginBase {
             CheckIfHomeExists();
         }
 
+        if (!spawn_f.exists()) {
+            System.out.println(" [*] Config/spawn.yml not found... Creating.");
+            PrintWriter sf = null;
+
+            try {
+                sf = new PrintWriter(SpawnFile, "UTF-8");
+                System.out.println(" [*] Config/spawn.yml created.");
+            } catch (Exception e) {
+                System.out.println(" [*] Could not create Config/spawn.yml.");
+            } finally {
+                if (sf != null)
+                    sf.close();
+            }
+        } else
+            System.out.println(" [*] Config/spawn.yml detected.");
+
         System.out.println("=== Essentials enabled ===");
         this.server = server;
     }
@@ -92,7 +118,7 @@ public class MyPlugin extends PluginBase {
             PrintWriter nrf = null;
 
             try {
-                nrf = new PrintWriter("Config/homes.yml", "UTF-8");
+                nrf = new PrintWriter(HomeFile, "UTF-8");
                 System.out.println(" [*] homes.yml created.");
             } catch(Exception e) {
                 System.out.println(" [*] Could not create homes.yml.");
@@ -109,7 +135,7 @@ public class MyPlugin extends PluginBase {
         PluginInfo info = new PluginInfo();
         info.description = "Essentials commands for your server";
         info.name = "Essentials";
-        info.version = "1.4";
+        info.version = "1.5";
         return info;
     }
 }

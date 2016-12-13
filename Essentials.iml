@@ -8,6 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="yamlbeans" level="project" />
-    <orderEntry type="library" name="PluginReference-1.9.4-b84" level="project" />
+    <orderEntry type="library" name="Rainbow-1.11-b141" level="project" />
   </component>
 </module>

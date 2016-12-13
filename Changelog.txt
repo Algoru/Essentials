@@ -15,3 +15,9 @@
     + Added /ping command
     * Many others features that I don't remember.
 
+1.5 [WORKING ON]
+	* Removed some useless try/catch
+	+ Added /setspawn command
+	+ Added /day command
+	+ Added /night command
+	...

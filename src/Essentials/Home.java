@@ -40,26 +40,22 @@ public class Home implements MC_Command {
             arg0.sendMessage(this.getHelpLine(arg0));
         else {
             try {
-                reader = new YamlReader(new FileReader("Config/homes.yml"));
+                reader = new YamlReader(new FileReader(MyPlugin.HomeFile));
 
                 String userName = " ";
                 double x = 0.0, y = 0.0, z = 0.0;
 
                 while(true) {
-                    try {
-                        Map user = (Map)reader.read();
+                    Map user = (Map)reader.read();
 
-                        if(user.get("usr").equals(arg0.getName())) {
-                            userName = (String)user.get("usr");
-                            x = new Double((String)user.get("x"));
-                            y = new Double((String)user.get("y"));
-                            z = new Double((String)user.get("z"));
-                            break;
-                        } else
-                            continue;
-                    }catch(Exception e) {
-
-                    }
+                    if(user.get("usr").equals(arg0.getName())) {
+                        userName = (String)user.get("usr");
+                        x = new Double((String)user.get("x"));
+                        y = new Double((String)user.get("y"));
+                        z = new Double((String)user.get("z"));
+                        break;
+                    } else
+                        continue;
                 }
 
                 if(userName.equals(" "))
