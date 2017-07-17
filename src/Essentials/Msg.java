@@ -6,10 +6,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Msg implements MC_Command {
-    public Msg() {
-
-    }
-
     @Override
     public List<String> getAliases() {
         return Arrays.asList("tell", "m", "t", "whisper");

@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="yamlbeans">
+  <library name="jsonsimple">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/yamlbeans.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../json-simple-master/jsonsimple.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -7,10 +7,6 @@ import PluginReference.MC_Player;
 import java.util.List;
 
 public class Fly implements MC_Command {
-    public Fly() {
-
-    }
-
     @Override
     public List<String> getAliases() {
         return null;
@@ -23,7 +19,7 @@ public class Fly implements MC_Command {
 
     @Override
     public String getHelpLine(MC_Player arg0) {
-        return ChatColor.GOLD + "/fly <player>" + ChatColor.WHITE + " -- Allows for creative mode fly";
+        return ChatColor.GOLD + "/fly [player]" + ChatColor.WHITE + " -- Allows for creative mode fly";
     }
 
     @Override

@@ -2,11 +2,8 @@ package Essentials;
 
 
 import PluginReference.*;
-import com.esotericsoftware.yamlbeans.YamlReader;
 
-import java.io.FileReader;
 import java.util.List;
-import java.util.Map;
 
 public class Day implements MC_Command {
     @Override
@@ -34,11 +31,11 @@ public class Day implements MC_Command {
         if (arg1.length > 1)
             arg0.sendMessage(this.getHelpLine(arg0));
         else
-            MyPlugin.server.executeCommand("time set 0");
+            MyPlugin.server.executeCommand("time set day");
     }
 
     @Override
     public boolean hasPermissionToUse(MC_Player arg0) {
-        return arg0.isOp() || arg0 == null ? true : false;
+        return arg0.isOp() || arg0 == null || arg0.hasPermission("essentials.day.use") ? true : false;
     }
 }
