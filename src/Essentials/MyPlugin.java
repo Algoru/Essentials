@@ -1,17 +1,19 @@
 package Essentials;
 
 import PluginReference.*;
-import PluginReference.ChatColor;
-import net.md_5.bungee.api.*;
 
 import java.io.File;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 public class MyPlugin extends PluginBase {
     public static MC_Server server = null;
 
+    public static ArrayList<String> afkPlayers = new ArrayList<String>();
+
     private static final String rulestxt  = "rules.txt";
     private static final String ConfigDir = "Config";
+    private static final Utils utils = new Utils();
 
     File r_f       = new File(rulestxt),
          configDir = new File(ConfigDir);
@@ -47,6 +49,7 @@ public class MyPlugin extends PluginBase {
         server.registerCommand(new Night());
         server.registerCommand(new Speed());
         server.registerCommand(new Vanish());
+        server.registerCommand(new Helpop());
 
         if(!r_f.exists()) {
             System.out.println(" [*] rules.txt not found... Creating.");

@@ -37,3 +37,4 @@ Command    | Permissions                  | Other users can use it on other user
 /day       | essentials.day.use           |                                       | /day                                |
 /night     | essentials.night.use         |                                       | /night                              |
 /vanish    | essentials.vanish.use        | essentials.vanish.others              | /vanish \[player\] \[on|off\]       | v
+/helpop    | essentials.helpop.use        |                                       | /helpop \<message\>                 | amsg, ac

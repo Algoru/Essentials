@@ -20,4 +20,5 @@
 	+ Added /setspawn command
 	+ Added /day command
 	+ Added /night command
-	...
+	+ Added /helpop command
+	+ Added /vanish command

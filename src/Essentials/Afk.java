@@ -35,34 +35,14 @@ public class Afk implements MC_Command {
     }
 
     @Override
-    public void handleCommand(MC_Player arg0, String[] arg1) {
-        // TODO: Add an alert when the user is no longer AFK
-        Utils u = new Utils();
-
-        if (arg1.length == 0) {
-            if (arg0 == null)
-                System.out.println(" ~ You must be a player to do that !");
-            else {
-                u.SendMessageToAllServer(ChatColor.GRAY + arg0.getName() + " is now AFK");
-            }
-        } else {
-            if (arg1.length > 1) {
-                if (arg0 == null)
-                    System.out.println(this.getHelpLine(arg0));
-                else
-                    arg0.sendMessage(this.getHelpLine(arg0));
-            } else {
-                MC_Player other_player = MyPlugin.server.getOnlinePlayerByName(arg1[0]);
-
-                if (arg0.hasPermission("essentials.afk.other")) {
-                    u.SendMessageToAllServer(ChatColor.GRAY + other_player.getName() + " is now AFK");
-                } else {
-                    if (arg0 == null)
-                        System.out.println(" ~ You don't have permission to do that !");
-                    else
-                        arg0.sendMessage(ChatColor.RED + " ~ You don't have permission to do that !");
-                }
-            }
+    public void handleCommand(MC_Player mc_player, String[] args) {
+        switch (args.length) {
+            case 0:
+                break;
+            case 1:
+                break;
+            default:
+                mc_player.sendMessage(this.getHelpLine(mc_player));
         }
     }
 
@@ -70,17 +50,11 @@ public class Afk implements MC_Command {
     public boolean hasPermissionToUse(MC_Player arg0) {
         boolean perm = false;
 
-        if (arg0 == null) {
-            perm = true;
-        } else {
-            if (arg0.isOp()) {
+        if (arg0 == null)
+            perm = false;
+        else
+            if (arg0.isOp() || arg0.hasPermission("essentials.afk.use") || arg0.hasPermission("essentials.afk.others"))
                 perm = true;
-            } else {
-                if (arg0.hasPermission("essentials.afk.use")) {
-                    perm = true;
-                }
-            }
-        }
 
         return perm;
     }

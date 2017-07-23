@@ -75,7 +75,7 @@ public class Vanish implements MC_Command {
             if (arg0.isOp() || arg0.hasPermission("essentials.vanish.use") || arg0.hasPermission("essentials.vanish.others"))
                 perm = true;
         }
-        
+
         return perm;
     }
 }
