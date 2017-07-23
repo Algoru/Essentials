@@ -30,9 +30,10 @@ Command    | Permissions                  | Other users can use it on other user
 /tppos     | essentials.tppos.use         |                                       | /tppos \[player\] \<x\> \<y\> \<z\> |
 /burn      | essentials.burn.use          |                                       | /burn \<player\> \<seconds\>        |
 /ext       | essentials.ext.use           |                                       | /ext \<player\>                     | extinguish
-/home      | essentials.home.use          |                                       | /home                               |
-/sethome   | essentials.sethome.use       |                                       | /sethome                            | createhome
 /broadcast | essentials.broadcast.use     |                                       | /broadcast \<message\>              | bcast
 /tpall     | essentials.tpall.use         |                                       | /tpall \[player\]                   |
 /ping      | essentials.ping.use          |                                       | /ping \[message\]                   | pong, echo
 /afk       | essentials.afk.use           | essentials.afk.other                  | /afk \[player\]                     | away
+/day       | essentials.day.use           |                                       | /day                                |
+/night     | essentials.night.use         |                                       | /night                              |
+/vanish    | essentials.vanish.use        | essentials.vanish.others              | /vanish \[player\] \[on|off\]       | v

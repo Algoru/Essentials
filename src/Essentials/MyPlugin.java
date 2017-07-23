@@ -46,6 +46,7 @@ public class MyPlugin extends PluginBase {
         server.registerCommand(new Day());
         server.registerCommand(new Night());
         server.registerCommand(new Speed());
+        server.registerCommand(new Vanish());
 
         if(!r_f.exists()) {
             System.out.println(" [*] rules.txt not found... Creating.");
